@@ -1,6 +1,6 @@
 default: docker_build
 
-DOCKER_IMAGE ?= kungus/k8s-kubectl
+DOCKER_IMAGE ?= kungus/gluu-tls-initializer
 GIT_BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 ifeq ($(GIT_BRANCH), master)
