@@ -2,10 +2,13 @@ FROM alpine
 
 LABEL maintainer="Gluu <support@gluu.org>"
 
+ARG VCS_REF
 ARG BUILD_DATE
 
 # Metadata
-LABEL org.label-schema.build-date=$BUILD_DATE \
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/docker-tls-initializer/k8s-kubectl" \
+      org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile"
 
 ENV KUBE_LATEST_VERSION="v1.15.2"
