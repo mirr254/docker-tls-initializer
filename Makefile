@@ -18,6 +18,3 @@ docker_build:
 docker_push:
 	# Push to DockerHub
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
-
-test:
-	docker run $(DOCKER_IMAGE):$(DOCKER_TAG) version --client
