@@ -2,12 +2,6 @@
 
 set -e
 
-if [ ! -f dhparam.pem ]; then
-    openssl dhparam -out dhparam.pem 2048
-fi
-
-kubectl create secret generic tls-dhparam --from-file=dhparam.pem
-
 if [ ! -f ingress.crt ]; then
     kubectl get secret gluu -o json \
     | grep '\"ssl_cert' \
